@@ -1,24 +1,18 @@
 from django.shortcuts import render
-from .models import Artista, Banda, Album
+from .models import Artista, Banda, Album, inicio
 from django.http import HttpResponse
 
 # Create your views here.
 
 
 def artistas(request):
-    artistas = Artista.objects.all()
-    artistas.save()
-    cadena = "Guardado correctamente"
-    return HttpResponse(artistas)
+    return render (request, "rockapp/artistas.html")
 
 def bandas(request):
-    bandas = Banda.objects.all()
-    bandas.save()
-    cadena = "Guardado correctamente"
-    return HttpResponse(bandas)
+    return render (request, "rockapp/bandas.html")
 
-def albums(request):
-    albums = Album.objects.all()
-    albums.save()
-    cadena = "Guardado correctamente"   
-    return HttpResponse(albums)
+def albums(request):   
+    return render (request, "rockapp/albums.html")
+
+def inicio(request):
+    return render (request, "rockapp/inicio.html")
