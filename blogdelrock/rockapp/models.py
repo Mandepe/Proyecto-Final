@@ -2,26 +2,26 @@ from django.db import models
 
 # Create your models here.
 
-class Artista(models.Model):
+class Artistas(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField()
     fecha_nacimiento = models.DateField()
 
-class Banda(models.Model):
+class Bandas(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField()
     
 
 
-class Album(models.Model):
+class Albums(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField()
-    artista = models.ForeignKey(Artista, on_delete=models.CASCADE)
-    banda = models.ForeignKey(Banda, on_delete=models.CASCADE)
+    artista = models.ForeignKey(Artistas, on_delete=models.CASCADE)
+    banda = models.ForeignKey(Bandas, on_delete=models.CASCADE)
 
 class inicio(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField()
-    artista = models.ForeignKey(Artista, on_delete=models.CASCADE)
-    banda = models.ForeignKey(Banda, on_delete=models.CASCADE)
-    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    artista = models.ForeignKey(Artistas, on_delete=models.CASCADE)
+    banda = models.ForeignKey(Bandas, on_delete=models.CASCADE)
+    album = models.ForeignKey(Albums, on_delete=models.CASCADE)

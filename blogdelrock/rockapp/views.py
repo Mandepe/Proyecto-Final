@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Artista, Banda, Album, inicio
+from .models import Artistas, Bandas, Albums, inicio
 from django.http import HttpResponse
 
 # Create your views here.
